@@ -1,7 +1,15 @@
 {
   "name": "sharah",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "myk",
+    "email": "hi@mohd.cc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kcodeltd/sharah"
+  },
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
