@@ -41,14 +41,4 @@ class XmlElement {
   }
 }
 
-class ElementList {
-  constructor({ content = [] }) {
-    this.content = content
-  }
-
-  render() {
-    return this.content.reduce((acc, el) => (typeof el.render === 'function' ? acc + el.render() : acc + escapeXml(el)), '')
-  }
-}
-
-module.exports = { escapeXml, stripXmlWhitespace, XmlElement, ElementList }
+module.exports = { escapeXml, stripXmlWhitespace, XmlElement }
