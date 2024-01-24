@@ -2,6 +2,9 @@ import createBadge from './lib/badge-maker'
 
 export default {
   async fetch(request) {
+    // ignore /favicon.ico
+    if (request.url.includes('favicon.ico')) return new Response('')
+
     const url = new URL(request.url)
 
     if (url.pathname === '/') {
