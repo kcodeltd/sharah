@@ -1,6 +1,6 @@
 import { XmlElement } from './xml'
 
-const createBadge = (label, message, messageColor = '#555', labelColor = '#0b0') => {
+const createBadge = (label, message, labelColor = '#555', messageColor = '#0b0') => {
   const labelWidth = label.length <= 5 ? 55 : label.length * 10
   const messageWidth = message.length <= 5 ? 55 : message.length * 10
   const badgeWidth = labelWidth + messageWidth
