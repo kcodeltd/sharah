@@ -17,7 +17,7 @@ export default {
     const message = url.pathname.split('/')[2]
 
     if (label && message) {
-      const svg = createBadge(label, message)
+      const svg = createBadge(label.replace(/\%20/g, ' '), message.replace(/\%20/g, ' '))
       return new Response(svg, { headers: { 'content-type': 'image/svg+xml;charset=utf-8' } })
     }
 
