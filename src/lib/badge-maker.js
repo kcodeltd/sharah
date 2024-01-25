@@ -35,7 +35,7 @@ const createBadge = (label, message, labelColor = '#555', messageColor = '#0b0')
   const title = new XmlElement({ name: 'title', content: [`${label}:${message}`] })
 
   const LGEle = new XmlElement({
-    name: 'LinearGradient',
+    name: 'linearGradient',
     content: [
       new XmlElement({ name: 'stop', attrs: { offset: 0, 'stop-color': '#aaa', 'stop-opacity': 0.1 } }),
       new XmlElement({ name: 'stop', attrs: { offset: 1, 'stop-opacity': 0.15 } })
