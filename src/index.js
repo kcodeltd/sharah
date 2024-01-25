@@ -1,4 +1,5 @@
 import createBadge from './lib/badge-maker'
+import languageProcessor from './utils/language'
 
 export default {
   async fetch(request) {
@@ -21,6 +22,10 @@ export default {
         const svg = createBadge(label, message)
         return new Response(svg, { headers: { 'content-type': 'image/svg+xml;charset=utf-8' } })
       }
+    }
+
+    if (url.pathname.split('/').length === 4 && url.pathname.split('/')[1] === 'ar') {
+      return languageProcessor(url)
     }
 
     return new Response('please use the correct syntax: https://i.sharah.io/<label>/<message>', { status: 406 })
