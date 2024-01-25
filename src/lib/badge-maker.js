@@ -1,6 +1,9 @@
 import { XmlElement } from './xml'
 
 const createBadge = (label, message, labelColor = '#555', messageColor = '#0b0') => {
+  label = decodeURIComponent(label).replace(/\%20/g, ' ').trim()
+  message = decodeURIComponent(message).replace(/\%20/g, ' ').trim()
+
   const labelWidth = label.length <= 5 ? 55 : label.length * 10
   const messageWidth = message.length <= 5 ? 55 : message.length * 10
   const badgeWidth = labelWidth + messageWidth
