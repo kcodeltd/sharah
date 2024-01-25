@@ -13,12 +13,14 @@ export default {
       })
     }
 
-    const label = url.pathname.split('/')[1]
-    const message = url.pathname.split('/')[2]
+    if (url.pathname.split('/').length === 3) {
+      const label = url.pathname.split('/')[1]
+      const message = url.pathname.split('/')[2]
 
-    if (label && message) {
-      const svg = createBadge(label.replace(/\%20/g, ' '), message.replace(/\%20/g, ' '))
-      return new Response(svg, { headers: { 'content-type': 'image/svg+xml;charset=utf-8' } })
+      if (label && message) {
+        const svg = createBadge(label.replace(/\%20/g, ' '), message.replace(/\%20/g, ' '))
+        return new Response(svg, { headers: { 'content-type': 'image/svg+xml;charset=utf-8' } })
+      }
     }
 
     return new Response('please use the correct syntax: https://i.sharah.io/<label>/<message>', { status: 406 })
